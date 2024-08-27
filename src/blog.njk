@@ -5,11 +5,12 @@ layout: 'base.njk'
 {{ title }}
 
 <ul role="list">
-    {%- for post in collections.post | reverse -%}
+    {%- for post in posts | reverse -%}
         <li>
             <article>
-                <h3>{{ post.data.title }}</h3>
+                <h3>{{ post.title }}</h3>
                 <p>{{ post.date | postDate}}</p>
+                <p>{{ post.postContent | renderRichTextAsHtml | safe }}</p>
             </article>
         </li>
     {%- endfor -%}
