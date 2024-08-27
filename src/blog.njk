@@ -1,0 +1,16 @@
+---
+title: 'Projects'
+layout: 'base.njk'
+---
+{{ title }}
+
+<ul role="list">
+    {%- for post in collections.post | reverse -%}
+        <li>
+            <article>
+                <h3>{{ post.data.title }}</h3>
+                <p>{{ post.date | postDate}}</p>
+            </article>
+        </li>
+    {%- endfor -%}
+</ul>
